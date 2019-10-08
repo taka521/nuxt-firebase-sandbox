@@ -2,6 +2,24 @@
 
 > My super-excellent Nuxt.js project
 
+## Setting enviroments
+
+Export Firebase SDK snippet values to environment variables.
+
+```
+export FIREBASE_APIKEY=
+export FIREBASE_AUTHDOMAIN=
+export FIREBASE_DATABASEURL=
+export FIREBASE_PROJECTID=
+export FIREBASE_STORAGEBUCKET=
+export FIREBASE_MESSAGINGSENDERID=
+export FIREBASE_APPID=
+export FIREBASE_MEASUREMENTID=
+```
+
+I'm using [direnv](https://github.com/direnv/direnv).
+
+
 ## Build Setup
 
 ``` bash
