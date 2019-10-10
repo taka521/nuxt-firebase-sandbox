@@ -6,15 +6,18 @@ export const state = () => ({
 })
 
 export const getters = {
-  user: state => state.user
+  user: state => state.user,
+  isAuthenticated: state => state.user !== null
 }
 
 export const mutations = {
-  setUser(state, {user}) {
+  SET_USER(state, { user }) {
     state.user = cloneDeep(user)
   }
 }
 
 export const actions = {
-
+  async setUser({ commit }, { user }) {
+    commit('SET_USER', user)
+  }
 }

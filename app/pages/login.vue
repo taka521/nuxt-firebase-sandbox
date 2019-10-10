@@ -5,34 +5,25 @@
         <v-toolbar-title>Login</v-toolbar-title>
       </v-toolbar>
       <v-card height="100px">
-        <v-card-text>
+        <v-card-text align="center" justify="center">
           <v-img src="/btn_google_signin_light_focus_web@2x.png" class="googleSinginImg">
             <v-btn @click="googleAuth" outlined class="googleSinginBtn"></v-btn>
           </v-img>
         </v-card-text>
       </v-card>
     </v-col>
-    <v-snackbar v-model="snackbar">OK</v-snackbar>
   </v-row>
 </template>
 
 <script>
 export default {
   layout: "login",
-  data() {
-    return {
-      user: null,
-      snackbar: false
-    };
-  },
   async mounted() {
-    const user = await this.auth().then(user => {
-      console.log(user)
-      if (user) this.snackbar = true
-      return user
-    });
-    this.$store.commit("setUser", { user });
-    this.user = user;
+    const user = await this.auth();
+    this.$store.dispatch("setUser", { user });
+    if (user) {
+      this.$router.push("/");
+    }
   },
   methods: {
     auth() {

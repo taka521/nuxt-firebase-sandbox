@@ -4,9 +4,9 @@ export default {
   srcDir: 'app',
   mode: 'universal',
 
-  /*
-  ** Headers of the page
-  */
+  /**
+   * Headers of the page
+   */
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -20,41 +20,48 @@ export default {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
+  /**
+   * Router Config
+   */
+  router: {
+    middleware: 'authentiated'
+  },
+
+  /**
+   * Customize the progress-bar color
+   */
   loading: { color: '#fff' },
 
-  /*
-  ** Global CSS
-  */
+  /**
+   * Global CSS
+   */
   css: [
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
+  /**
+   * Plugins to load before mounting the App
+   */
   plugins: [
     '~/plugins/firebase'
   ],
 
-  /*
-  ** Nuxt.js dev-modules
-  */
+  /**
+   * Nuxt.js dev-modules
+   */
   buildModules: [
     '@nuxtjs/vuetify',
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
+  /**
+   * Nuxt.js modules
+   */
   modules: [
   ],
 
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
+  /**
+   * vuetify module configuration
+   * https://github.com/nuxt-community/vuetify-module
+   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -73,9 +80,9 @@ export default {
     }
   },
 
-  /*
-  ** Build configuration
-  */
+  /**
+   * Build configuration
+   */
   env: {
     FIREBASE_APIKEY: process.env.FIREBASE_APIKEY,
     FIREBASE_AUTHDOMAIN: process.env.FIREBASE_AUTHDOMAIN,
@@ -87,9 +94,9 @@ export default {
     FIREBASE_MEASUREMENTID: process.env.FIREBASE_MEASUREMENTID
   },
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    /**
+     * You can extend webpack config here
+     */
     extend(config, ctx) {
     }
   }
