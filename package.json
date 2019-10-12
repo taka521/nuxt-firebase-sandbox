@@ -6,9 +6,13 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build:nuxt": "nuxt build",
+    "build": "yarn clean;yarn build:nuxt;yarn copy # for Firebase",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "clean": "rm -rf {dist,.nuxt}",
+    "copy": "mkdir dist;cp -R functions dist/server;cp -R app/static/ dist/client;cp -R .nuxt dist/server;cp -R dist/server/.nuxt/dist dist/client/assets",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "dayjs": "^1.8.16",

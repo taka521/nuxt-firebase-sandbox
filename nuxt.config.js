@@ -24,7 +24,6 @@ export default {
    * Router Config
    */
   router: {
-    middleware: 'authentiated'
   },
 
   /**
@@ -94,6 +93,7 @@ export default {
     FIREBASE_MEASUREMENTID: process.env.FIREBASE_MEASUREMENTID
   },
   build: {
+    publicPath: '/assets/',
     /**
      * You can extend webpack config here
      */

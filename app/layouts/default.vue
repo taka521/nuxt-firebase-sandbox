@@ -16,10 +16,11 @@
 
 <script>
 export default {
-  data () {
+  middleware: "authentiated",
+  data() {
     return {
-      title: 'Firebase Sandbox'
-    }
+      title: "Firebase Sandbox"
+    };
   }
-}
+};
 </script>
